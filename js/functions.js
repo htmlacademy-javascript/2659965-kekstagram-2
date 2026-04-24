@@ -1,17 +1,16 @@
-export function checkStringLength(str, maxLength) {
-  return str.length <= maxLength;
-}
 
-export function checkPalindrome (str) {
+export const checkStringLength = (str, maxLength) => str.length <= maxLength;
+
+export const checkPalindrome = (str) => {
   const normalizedString = str.toLowerCase().replaceAll(' ', '');
   let reverseString = '';
-  for (let i = normalizedString.length - 1; i >= 0; i--){
-    reverseString += normalizedString[i];
+  for (const char of [...normalizedString].reverse()){
+    reverseString += char;
   }
   return normalizedString === reverseString;
-}
+};
 
-export function checkPalindromeTwoPointers(str) {
+export const checkPalindromeTwoPointers = (str) => {
   const normalizedString = str.toLowerCase().replaceAll(' ','');
   let leftPointer = 0;
   let rightPointer;
@@ -24,19 +23,19 @@ export function checkPalindromeTwoPointers(str) {
     rightPointer --;
   }
   return true;
-}
+};
 
-export function chooseNumbers (str) {
+export const chooseNumbers = (str) => {
   let numberString = '';
   if (typeof str === 'number') {
     str = str.toString();
   }
-  for (let i = 0; i <= str.length - 1; i++){
-    if (!isNaN(parseInt(str[i],10))) {
-      numberString += str[i];
+  for (const char of [...str]){
+    if (!isNaN(parseInt(char,10))) {
+      numberString += char;
     }
   }
   return numberString ? Number(numberString) : NaN;
-}
+};
 
 
