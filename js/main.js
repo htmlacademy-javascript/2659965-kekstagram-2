@@ -5,12 +5,12 @@ const NAMES = ['Артём', 'Карина', 'Илья', 'Мария', 'Дани
 
 const createRandomRangeInteger = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const getRandomArrayElement = (array) => array[createRandomRangeInteger(0, array.length - 1)];
-const createIdGenerator = () => {
+const createIdGenerator = (min, max) => {
   const arrayIds = [];
-  for (const i of arrayIds) {
+  for (let i = min; i <= max; i++) {
     arrayIds.push(i);
   }
-  for (let i = 0; i <= arrayIds.length - 1; i++) {
+  for (const i of arrayIds) {
     const j = createRandomRangeInteger(0,i);
     [arrayIds[i], arrayIds[j]] = [arrayIds[j], arrayIds[i]];
   }
