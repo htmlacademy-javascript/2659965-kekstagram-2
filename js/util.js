@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
-import './data.js';
-export const createRandomRangeInteger = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-export const getRandomArrayElement = (array) => array[createRandomRangeInteger(0, array.length - 1)];
-export const createIdGenerator = (min, max) => {
+const createRandomRangeInteger = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const getRandomArrayElement = (array) => array[createRandomRangeInteger(0, array.length - 1)];
+const createIdGenerator = (min, max) => {
   const arrayIds = [];
   for (let i = min; i <= max; i++) {
     arrayIds.push(i);
@@ -21,3 +20,4 @@ export const createIdGenerator = (min, max) => {
     return id;
   };
 };
+export { createRandomRangeInteger, getRandomArrayElement, createIdGenerator };
